@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Etch a sketch</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Your painting</h1>
+        <!-- <button class="btn" onclick="createBord()">Choose size </button> -->
+        <div class="content">
+            <div class="mode">Mode: Coloring</div>
+            <div class="art-wrapper">
+            </div>
+            <div class="buttons">
+                <button onclick="changeColor('black')" class="btn">Black</button>
+                <button onclick="changeColor('pink')" class="btn">Erasor</button>
+                <button onclick="changeColor('gray')" class="btn">Gray </button>
+                <button onclick="changeColor('random')" class="btn">Random</button>
+                <button onclick="resetBoard(red)" class="btn">Reset</button>
+            </div>
+            <input class="input" type="text" placeholder="size of board" value="16" onchange="changeSize(this.value)">
+            
+        </div>
+        <button class="btn btn-set">set size</button>   
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
