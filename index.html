@@ -17,6 +17,10 @@
         <!-- <button class="btn" onclick="createBord()">Choose size </button> -->
         <div class="content">
             <div class="mode">Mode: Coloring</div>
+            <div class="wrapper-info">
+                <div class="size">Size board is: 32</div>
+                <div class="choose">Color is: Black </div>
+            </div>
             <div class="art-wrapper">
             </div>
             <div class="buttons">
@@ -24,12 +28,13 @@
                 <button onclick="changeColor('pink')" class="btn">Erasor</button>
                 <button onclick="changeColor('gray')" class="btn">Gray </button>
                 <button onclick="changeColor('random')" class="btn">Random</button>
-                <button onclick="resetBoard(red)" class="btn">Reset</button>
+                <button onclick="resetBoard(pink)" class="btn">Reset</button>
             </div>
-            <input class="input" type="text" placeholder="size of board" value="16" onchange="changeSize(this.value)">
+            <input class="input" type="text" placeholder="size of board" value="32" >
+            <!-- onchange="changeSize(this.value)" -->
             
         </div>
-        <button class="btn btn-set">set size</button>   
+        <button class="btn btn-set" id = 'set'>set size</button>   
     </div>
     
     <script src="script.js"></script>

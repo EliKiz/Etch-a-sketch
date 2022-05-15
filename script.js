@@ -1,12 +1,15 @@
 
-    const chooseBtn = document.querySelector('.btn');
-      
+    // const chooseBtn = document.querySelector('.btn');
+    let addInput = document.querySelector('.input');
+    const btnSize = document.querySelector('#set'),
+        addSize = document.querySelector('.size'),
+        addChoose = document.querySelector('.choose');
+
+
      let color = 'black';
     let click = true;
-    let red = 'red';
     let pink = 'pink';
-    let green = 'green';
-    const size = 16;
+    let size = 16;
     function createBord (size, color) {
         let wrapper = document.querySelector('.art-wrapper');
         let squares = wrapper.querySelectorAll('div');
@@ -34,29 +37,23 @@
         secondQua = prompt('enter number must be 2 and 100');
         return secondQua;
     }
-    chooseBtn.addEventListener('click', () => {
-        for(let i= 0; i<1; i++) {
-          quastion();  
-          if(secondQua >=2 && secondQua <=100) {
-            createBord(secondQua, pink);
-        }else if (secondQua === null) {
-            createBord(32, pink);
-            break;
-        } else { 
-            alert('to many, input must be 2 and 100');
-            i--;
-            } 
+    // chooseBtn.addEventListener('click', () => {
+    //     for(let i= 0; i<1; i++) {
+    //       quastion();  
+    //       if(secondQua >=2 && secondQua <=100) {
+    //         createBord(secondQua, pink);
+    //     }else if (secondQua === null) {
+    //         createBord(32, pink);
+    //         break;
+    //     } else { 
+    //         alert('to many, input must be 2 and 100');
+    //         i--;
+    //         } 
          
-        }
-    });
-
-    function changeSize(input) {
-        if(input >=2 && input <=100 ) {
-            createBord(input, pink);
-        } else {
-            alert('to many, input must be 2 and 100');
-        }
-    }
+    //     }
+    // });
+    
+   
    
     function colorSquare () {
        if(click) {
@@ -84,6 +81,49 @@
     });  
     }
     isMode();
+
+    function changeSize(arg) {
+        if(arg >=2 && arg <=100 ) {
+            createBord(arg, pink);
+        } else {
+            alert('to many, input must be 2 and 100');
+        }
+    }
+    
+    function isSize() {
+        btnSize.addEventListener('click', () => {
+                let newSize = addInput.value;
+                if(newSize >=2 && newSize <=100 ) {
+                    addSize.textContent = `Size board is: ${newSize}`;
+                } else { 
+                    addInput.value = 32;
+                    addSize.textContent = `To many, input must be 2 and 100`;
+                }
+                changeSize(newSize);
+        });
+    }
+    isSize();
+
+    function isColor () {
+        document.querySelector('.buttons').addEventListener('click', () => {
+            addChoose.textContent= `Color is: ${color}`;
+        });
+        
+        console.log(addChoose);
+    }
+    isColor();
+    function chooseClicked() {
+        document.querySelector('.buttons').addEventListener('click', (e) => {
+            if(e.target.tagName === 'BUTTON') {
+                console.log('done');
+            }
+        });
+    }
+    const btnCl = (e) => {
+        const id = e.target.class;
+        console.log(id);
+    };
+  
 
     
     
